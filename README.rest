@@ -1,0 +1,67 @@
+========
+XERO API
+========
+
+Xero API provides a client authentication module and some of the XERO
+API Resources for your `Private Application` to entegrate with XERO
+accounting system. Typical usage often looks like this::
+
+
+    from xeroapi.client import Client
+    from xeroapi.resources import XOrganization
+
+    CONSUMER_KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    CONSUMER_SECRET = "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+    PATH_TO_YOUR_PRIVATE_KEY = "/path/to/your/private_key.pem"
+
+    xero_client = Client(CONSUMER_KEY, CONSUMER_SECRET, PATH_TO_YOUR_PRIVATE_KEY)
+    print "Your organization name in XERO is: ", XOrganization.get(xero_client)
+
+
+Please refer to `API Overview http://blog.xero.com/developer/api-overview/` to start.
+
+
+Client
+======
+
+Includes the authentication and information exhange methods.
+
+* uses oauth2 for authorization.
+
+* signs all API calls using your private key with the RSA-SHA1 signature method.
+
+* includes get/put/post methods which converts xml data to python dictionaries.
+
+
+Please refer to the `Atuhentication with the XERO API <http://blog.xero.com/developer/api-overview/authentication/>` section for details.
+
+
+Resources
+=========
+
+Defines the `X` based classes for the following XERO resources:
+
+* Accounts
+* Organizations
+* AccountTypes
+* Contacts
+* Invoices
+* Items
+* BrandingThemes
+* TaxRates
+
+
+Adding new resources is easy. Plese refer to the `Xero Developer API <http://blog.xero.com/developer/api/>` for the whole list of resources.
+
+
+Contributors
+============
+
+The Beesdom Team:
+
+* Vehbi Sinan Tunalioğlu <vst@beesdom.com>
+* Can Burak Çilingir <can@beesdom.com>
+* Mehmet Fatih Koksal <fkoksal@beesdom.com>
+* Atamert Ölçgen <atamert@beesdom.com>
+* Eugene Wee <eugene@beesdom.com>
+* Calvin Ng <calvin@beesdom.com>
